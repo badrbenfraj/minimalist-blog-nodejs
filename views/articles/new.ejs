@@ -1,0 +1,8 @@
+<%- include('../_partials/_header.ejs', {title: 'Create new Article'}) %>
+    <div class="container">
+        <h1 class="mb-4">New Article</h1>
+        <form action="/articles" method="POST">
+            <%- include('./_partials/_form_fields.ejs') %>
+        </form>
+    </div>
+<%- include('../_partials/_footer.ejs') %>
