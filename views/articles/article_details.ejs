@@ -1,5 +1,16 @@
 <%- include('../_partials/_header.ejs', {title: 'Article Details'}) %>
     <div class="container">
-        <h1 class="mb-1"><%= article.title %></h1c>
+        <h1 class="mb-1"><%= article.title %></h1>
+        <div class="text-muted mb-2">
+            <%= article.creationDate.toLocaleString() %>
+        </div>
+        <a class="btn btn-secondary" href="/">All Articles</a>
+        <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+        <div>
+            <%= article.markdown %>
+        </div>
+        <div>
+            <%- article.description %>
+        </div>
     </div>
 <%- include('../_partials/_footer.ejs') %>
