@@ -51,9 +51,16 @@ router.post('/:slug/edit', async (req, res) => {
 
 });
 
-router.delete('/:id', async (req, res) => {
-    await Article.findByIdAndDelete(req.params.id);
-    res.redirect('/');
+router.delete('/:slug', async (req, res) => {
+  try {
+    let article = await Article.findOne({slug: req.params.slug});
+    Article.deleteOne(article, function(){
+      res.status(200).redirect('/');
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

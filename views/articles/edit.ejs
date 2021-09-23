@@ -3,6 +3,7 @@ sources: ['https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz
 ) %>
     <div class="container">
         <h1 class="mb-4">Edit Article</h1>
+        <button class="delete-article btn btn-danger btn-small" data-slug="<%= article.slug %>">Delete</button>
         <form action="/articles/<%= article.slug %>/edit" method="POST">
             <%- include('./_partials/_form_fields.ejs'), {article: article} %>
         </form>
